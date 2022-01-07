@@ -16,9 +16,6 @@ public class CalculatorServiceImpl implements CalculatorService{
 
     @Override
     public double divide(double num1, double num2) {
-        if (num2 == 0) {
-            System.out.println("Нельзя делить на 0!!!");
-        }
         return num1/num2;
     }
 
