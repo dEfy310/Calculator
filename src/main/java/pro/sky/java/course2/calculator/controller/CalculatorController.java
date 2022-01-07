@@ -19,23 +19,23 @@ private final CalculatorService calculatorService;
     @GetMapping("/divide")
     public double returnPrivate(@RequestParam double num1, @RequestParam double num2) {
         if (num2 == 0) {
-            System.out.println("Нельзя делить на 0!!!");
+            return "Нельзя делить на 0!!!";
         }
-        return calculatorService.divide(num1, num2);
+        return num1 + " / " + num2 + " = " + calculatorService.divide(num1, num2);
     }
     @GetMapping("/multiply")
     public double returnMultiplicationResult(@RequestParam double num1, @RequestParam double num2) {
-        return calculatorService.multiply(num1, num2);
+        return num1 + " * " + num2 + " = " + calculatorService.multiply(num1, num2);
     }
 
     @GetMapping("/minus")
     public double returnDifference(@RequestParam double num1, @RequestParam double num2) {
-        return calculatorService.difference(num1, num2);
+        return num1 + " - " + num2 + " = " + calculatorService.difference(num1, num2);
     }
 
     @GetMapping("/plus")
     public double returnSum(@RequestParam double num1, @RequestParam double num2) {
-        return calculatorService.sum(num1, num2);
+        return num1 + " + " + num2 + " = " + calculatorService.sum(num1, num2);
     }
 
     @GetMapping
